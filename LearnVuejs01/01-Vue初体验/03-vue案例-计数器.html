@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div id="app">
         <h1>{{counter}}</h1>
-       <!-- <button v-on:click="counter++">+</button>
+        <!-- <button v-on:click="counter++">+</button>
        <button v-on:click="counter--">-</button> -->
-       <button v-on:click="add">+</button> 
-       <button v-on:click="sub">-</button>
+        <button v-on:click="add">+</button>
+        <button v-on:click="sub">-</button>
     </div>
-    
+
     <script src="../js/vue.js"></script>
     <script>
         const app = new Vue({
-            el:'#app',//用于挂载要管理的元素
-            data:{
-                counter:0 //被计数的数字
+            el: '#app',//用于挂载要管理的元素
+            data: {
+                counter: 0 //被计数的数字
             },
-            methods:{
-                add:function(){
+            methods: {
+                add: function () {
                     this.counter++
                 },
-                sub:function(){
+                sub: function () {
                     this.counter--
-                },
+                }
             }
         })
     </script>
@@ -35,5 +37,5 @@
         //数据驱动试图
     -->
 </body>
-</html>
 
+</html>
