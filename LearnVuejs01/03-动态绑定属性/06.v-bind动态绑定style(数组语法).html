@@ -1,0 +1,36 @@
+vue<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body >
+    <div  id="app">
+        <p v-bind:style="[baseStyle1,baseStyle2]"> {{message}}</p>
+        <p v-bind:style="getStyle()"> {{message}}</p>
+
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好啊，style',
+                baseStyle1:{fontSize: '100px'},
+                baseStyle2:{backgroundColor: 'red'},
+            },
+            methods: {
+                getStyle: function()    {
+                    return [this.baseStyle1,this.baseStyle2];
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -19,8 +19,8 @@
         <ul->
             <li v-for='(item,index) in movies' v-on:click="liBnt(index)" v-bind:class="{isRead:index == activeIndex}">{{item}}</li>
         </ul->
-
-    </div>
+                                                                                                                                                                                        
+    </div>        
     <script src="../js/vue.js"></script>
     <script>
         const app = new Vue({
@@ -32,16 +32,13 @@
             },
             methods: {
                 liBnt: function (index) {
-                    console.log(index);
-                    this.activeIndex = index;
+                    console.log(index);//打印下标
+                    this.activeIndex = index; //赋值选中的下标
                     console.log(this.activeIndex);
                 }
             }
         })
     </script>
-    <!--
-        //数据驱动试图
-    -->
 </body>
 
 </html>

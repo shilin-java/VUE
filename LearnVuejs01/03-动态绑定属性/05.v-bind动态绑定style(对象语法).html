@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body >
+    <div  id="app">
+        <!--<h2 v-bind:style="{key(属性):value(属性值),key(属性):value(属性值)}"> {{message}}</h2> -->
+        <!--不同属性之间记得用逗号隔开-->
+        <h2 v-bind:style="{fountSize:finalSize,backgroundColor:finalColor}"> {{message}}</h2>
+        <h2 v-bind:style="getStyle()"> {{message}}</h2>
+
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好啊，style',
+                finalSize: '100px',
+                finalColor: 'red',
+            },
+            methods: {
+                getStyle: function()    {
+                    return {fountSize:this.finalSize,backgroundColor:this.finalColor};
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
