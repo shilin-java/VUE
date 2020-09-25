@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>{{massage}}</h2>
+        <h3>{{firstName + '  ' + lastName}}</h3>
+        <h3>{{firstName}} {{lastName}}</h3>
+        <h3>{{getName()}}</h3>
+        <!--以上方式太过麻烦 -->
+        <!--计算属性的引用-->
+        <h3>{{fullName}}</h3>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                massage: '你好啊，计算属性',
+                firstName: "王",
+                lastName: "以太"
+            },
+            methods: {
+                getName: function () {
+                    return this.firstName + " " + this.lastName;
+                }
+            },
+            //计算属性
+            computed: {
+                fullName: function () {
+                    return this.firstName + " " + this.lastName;
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
