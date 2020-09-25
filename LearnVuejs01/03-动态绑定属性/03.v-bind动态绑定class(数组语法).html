@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态绑定class（数组绑定）</title>
+    <style>
+        .active {
+            color: rgb(228, 18, 18);
+        }
+        .title {
+            margin: 0 auto;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="app">
+
+        <h1>{{message}}</h1>
+        <!--
+            点击事件后，可以动态修改标签的颜色
+        -->
+        <!-- <div class="title" v-bind:class="{active:isActive}">{{msg}}</div> -->
+        <div v-bind:class="getClass()">方法调用属性</div>
+        <button v-on:click="btnClick()">点击</button>
+       
+
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',//用于挂载要管理的元素
+            data: {//自定义数据
+                message: '你好啊，v-bind （数组绑定）',
+                msg: "颜色",
+                isActive: true,
+                isLine: true
+            },
+            methods: {
+                btnClick: function () {
+                    console.log("this.isActive:" + this.isActive);
+                    this.isActive = !this.isActive;
+                },
+                getClass: function () {
+                    return [this.active, this.line ];
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
